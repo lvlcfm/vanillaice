@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <style>
+    div.padded {
+      padding-top: 0px;
+      padding-right: 100px;
+      padding-bottom: 0.25in;
+      padding-left: 100px;
+    }
+  </style>
+  <title>Christopher Franco | CS 184</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+
+<body>
+  <h1 align="middle">CS 184: Computer Graphics and Imaging, Spring</h1>
+  <h1 align="middle">Final Project: Vanilla Ice</h1>
+
+  <!-- Add Websitulst URL -->
+  <br><br>
+  <div>
+    <h2 align="middle">Abstract</h2>
+    <p>
+      This project explores the concept creating an Ice Cube within a Skybox. The project pauses at a point where it
+      could, in the future, create a fully fledged shader for Ice, which is why it called “Vanilla Ice” — servicing as a
+      “base” for future ice inquiry.
+    </p>
+    <br>
+
+    <h2 align="middle">Technical Approach</h2>
+    <p>
+      After completing Project 4, I wanted to explore how I could use shaders to create a realistic piece of ice. And so
+      I learned how to use Blender in order to prototype the end result of what I wanted. And so I opened up blender and
+      learned how to make some realistic looking ice. Shaders really do wonders in this scene.
+    </p>
+    <div align="middle">
+      <table style="width:100%">
+        <tr align="center">
+          <td>
+            <img src="images/prototype_blender_ice.png" align="middle" width="400px" />
+            <figcaption>Prototype of Ice on Blender</figcaption>
+          </td>
+
+        </tr>
+      </table>
+    </div>
+    <p>
+      Reflecting on the prototype, I thought about what knowledge I was missing. What came to mind was reflection,
+      refaction and environment lighting. Those were the two features that I did not implement in project 3-2. And so I
+      went back to Project 3-2 and implemented those last two features so that I can have an intuitive understanding of
+      how to implement those features in my pursuit of ice.
+    </p>
+    <p>
+      After implementing these features, I looked at my Blender prototype and I began searching for ways to implement it
+      with the ideas of reflection and refraction with environment lighting. And so ultimately this led me to the
+      Skybox.
+    </p>
+    <p>
+      By using a skybox and a cube within the box I began exploring how I could eventually make this cube into a piece
+      of ice. Using “learn opengl”’s tutorial on how to create cubemaps, I began focusing on modifying the shaders of
+      the cube itself to see how I could generate a more ice texture. As you can see, I ultimately modified the Shader
+      of the cube to have it be slightly transparent and modied the refractive index to be that of Ice which is 1.309.
+    </p>
+    <p>
+      The project’s progress takes a pause here, which is why I playfully have named this project Vanilla Ice, due to it
+      serving as a “base” for future explorations in developing shaders for Ice within a skybox.
+    </p>
+    <h3>A description of problems encountered and how you tackled them.</h3>
+    <p>
+      Most of the problems encountered in this project were related to c++ tooling, fortunately I was able to overcome
+      the initial pain of settting up an opengl project with a boilerplate from the github repository Glitter and also
+      referencing the learn open gl solutions here.
+    </p>
+    <h3>A description of lessons learned.</h3>
+    <p>
+      I think the first lesson is — don’t set up an opengl project alone or from scratch. Luckily I found great
+      repositories and tutorials to expedite my progress.
+    </p>
+    <p>
+      Prototyping the end result with Blender first was a great decision. While prototyping the ice I saw what
+      components I would eventually need to build into the shader. It served as a Visual Unit Test you could say. And it
+      allowed me to get an intuitive sense of what components to focus on.
+    </p>
+    <h3 align="middle">Results</h3>
+    <div align="middle">
+      <table style="width:100%">
+        <tr align="center">
+          <td>
+            <img src="images/final_project_ice.png" align="middle" width="400px" />
+            <figcaption>Ice Cube (cube map) within a Skybox</figcaption>
+          </td>
+
+        </tr>
+      </table>
+    </div>
+    <div align="middle">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ioUvhf3ohEc" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+
+    </div>
+    <h3 align="middle">References</h3>
+    <div align="middle">
+      <p><a href="https://github.com/Polytonic/Glitter">Glitter: Boiler Plate for OpenGL</a></p>
+      <p><a href="https://github.com/JoeyDeVries/LearnOpenGL">LearnOpenGL: Solutions for OpenGl tutorials</a></p>
+      <p><a href="https://learnopengl.com/Advanced-OpenGL/Cubemaps">Learn Open GL Tutorial — Cubemaps (skybox)</a></p>
+      <p><a href="https://cgcookie.com/posts/make-realistic-3d-ice-in-blender-procedural-shaders">Make Realistic 3D Ice
+          in
+          Blender (Procedural Shaders)</a></p>
+      <p><a href="https://www.creativeshrimp.com/create-realistic-ice-lighting-book-02.html">Lighting for Nerds #2:
+          Create
+          Realistic Ice and Seriously Awesome Refraction (Four things that help me to create convincing ice material in
+          Blender
+          )
+        </a></p>
+    </div>
+
+    <h3 align="middle">Contributions from team members</h3>
+    <div align="middle">
+      <p>
+        Learn OpenGl family - they provided the starter code for the implementation of the Skybox that I could build
+        upon
+      </p>
+      <p>
+        Christopher Franco - Modified the Shader to provide a transparent ice appearance to the cube within the skybox.
+        Also implemented two additional features from project 3-2 - “Part 1: Mirror and Glass Materials” and “Part 3:
+        Environment Light” in order to provide intition and insight as to how to move forward with building the
+        prototype
+        from Blender. Also built the prototype of the realistic looking ice using Shaders in Blender.
+      </p>
+    </div>
+    <br>
+  </div>
+</body>
+
+</html>
